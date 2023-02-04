@@ -22,5 +22,11 @@ public class Animacion : MonoBehaviour
 
         anim.SetFloat("inputH", inputH);
         anim.SetFloat("inputV", inputV);
+        //input left click
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("atacar");
+        }
+        
     }
 }
