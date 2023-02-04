@@ -23,7 +23,10 @@ public class Obstaculo : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        quitarVida();
+        if (collision.gameObject.tag == "Jugador") {
+            quitarVida();
+        }
+       
     }
 
     //----------------------------------------------------------------//
@@ -37,6 +40,7 @@ public class Obstaculo : MonoBehaviour
         if(jugador.GetComponent<statsPlayer>().Vida > 0)
         {
             jugador.GetComponent<statsPlayer>().Vida -= danyo;
+            Debug.Log("Te han echo daño");
         }
     }
 }
