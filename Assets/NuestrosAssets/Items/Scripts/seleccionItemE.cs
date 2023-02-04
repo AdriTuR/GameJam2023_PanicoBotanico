@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class seleccionItemE : MonoBehaviour
 {
+    public GameObject seleccionItem;
     public GameObject itemE;
-
+    public string[] listaItems = new string[] { "itemPala", "itemRegadera", "itemAbono" };
+    public int itemAparecer;
+    private int itemQ;
     // Start is called before the first frame update
     void Start()
     {
+        itemQ = GameObject.Find("seleccionItemQ").GetComponent<seleccionItemQ>().itemAparecer;
+        itemAparecer = Random.Range(0, 2);
+        while(itemAparecer == itemQ)
+        {
+            itemAparecer = Random.Range(0, 2);
+        }
+        itemE = GameObject.Find(listaItems[itemAparecer]);
+       
+
+        seleccionItem = GameObject.Find("seleccionItemE");
+        itemE.transform.position = seleccionItem.transform.position;
         itemE.SetActive(false);
+        seleccionItem.SetActive(false);
+
     }
 
     private void OnEnable()
     {
-        itemE.SetActive(false);
     }
 
     // Update is called once per frame

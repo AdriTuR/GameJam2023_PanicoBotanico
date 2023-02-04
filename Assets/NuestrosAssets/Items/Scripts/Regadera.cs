@@ -10,11 +10,13 @@ public class Regadera : MonoBehaviour
         
     }
 
-    public statsPlayer statsPlayer;
+    private GameObject itemRegadera;
     
 
     private void OnEnable()
     {
+       /* itemRegadera = GameObject.Find("itemRegadera");
+        itemRegadera.transform.position = GetComponentInParent<GameObject>().transform.position;*/
         GameObject jugador = GameObject.Find("Jugador");
         jugador.GetComponent<statsPlayer>().VidaMax = jugador.GetComponent<statsPlayer>().VidaMax + 1;
 
