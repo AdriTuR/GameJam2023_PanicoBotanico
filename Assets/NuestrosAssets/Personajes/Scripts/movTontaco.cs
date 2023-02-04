@@ -24,6 +24,7 @@ public class movTontaco : MonoBehaviour
         {
             following = true;
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            transform.LookAt(player);
         }
         else
         {
