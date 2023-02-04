@@ -16,7 +16,7 @@ public class Pala : MonoBehaviour
     }
     private void Update()
     {
-        if (itemPala.activeSelf == true && hasRun == false)
+        if (Input.GetKeyDown(KeyCode.Return) && hasRun == false)
         {
             hasRun = true;
             GameObject jugador = GameObject.Find("Jugador");
