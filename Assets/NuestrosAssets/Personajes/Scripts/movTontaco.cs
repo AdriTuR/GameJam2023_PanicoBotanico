@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class movTontaco : MonoBehaviour
 {
-    public float followDistance = 10f;
+    public float followDistance = 1000f;
     public float moveSpeed = 5f;
 
     private Transform player;

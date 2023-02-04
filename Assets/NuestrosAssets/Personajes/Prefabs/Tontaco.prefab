@@ -72,10 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8be0fbd46c51c4396876ce37f813ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jugador: {fileID: 0}
-  speed: 5
-  stoppingDistance: 10
-  retreatDistance: 5
+  followDistance: 17
+  moveSpeed: 5
 --- !u!65 &2454865370693818168
 BoxCollider:
   m_ObjectHideFlags: 0
