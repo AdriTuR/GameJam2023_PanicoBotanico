@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,24 @@ public class statsPlayer : MonoBehaviour
 {
     //Stats para el jugador de vida, vida máxima, ataque, velocidad de movimiento, velocidad de ataque, tamaño y suerte
     // Variables de estadísticas del jugador
-    public float danyo;
-    public int vidaMax;
-    public int vida;
+    [SerializeField]
+    private float danyo;
+    [SerializeField]
+    private int vidaMax;
+    [SerializeField]
+    private int vida;
+    [SerializeField]
     public float velocidadMovimiento;
-    public float velocidadAtaque;
-    public float suerte;
-    public float tamanyoPlayer;
-    public float nockbackeo;
-    public float dashCooldown;
+    [SerializeField]
+    private float velocidadAtaque;
+    [SerializeField]
+    private float suerte;
+    [SerializeField]
+    private float tamanyoPlayer;
+    [SerializeField]
+    private float nockbackeo;
+    [SerializeField]
+    private float dashCooldown;
 
     // Getters y setters para las estadísticas del jugador
     public float Danyo { get => danyo; set => danyo = value; }
@@ -32,8 +42,8 @@ public class statsPlayer : MonoBehaviour
         // Inicializar las estadísticas del jugador aquí
         VidaMax = 6;
         Vida = 6;
-        
-        
+
+
     }
 
     void Update()
@@ -41,7 +51,7 @@ public class statsPlayer : MonoBehaviour
         // Controlar la salud del jugador aquí
         if (vida > vidaMax)
         {
-            
+
         }
     }
 
