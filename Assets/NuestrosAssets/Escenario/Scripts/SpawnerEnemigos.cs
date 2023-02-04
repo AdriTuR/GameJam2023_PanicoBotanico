@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class SpawnerEnemigos : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefab;
     public Transform[] spawnPoints;
     public int maxEnemies = 10;
     public int maxSimultaneousEnemies = 4;
@@ -35,7 +35,7 @@ public class SpawnerEnemigos : MonoBehaviour
                 int spawnIndex = Random.Range(0, spawnPoints.Length);
                 if (!occupiedSpawnPoints[spawnIndex])
                 {
-                    Instantiate(enemyPrefab, spawnPoints[spawnIndex].position, Quaternion.identity);
+                    Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], spawnPoints[spawnIndex].position, Quaternion.identity);
                     occupiedSpawnPoints[spawnIndex] = true;
                     currentEnemies++;
                 }
