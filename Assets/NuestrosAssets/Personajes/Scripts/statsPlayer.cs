@@ -42,6 +42,7 @@ public class statsPlayer : MonoBehaviour
         // Inicializar las estadísticas del jugador aquí
         VidaMax = 5;
         Vida = 6;
+        Danyo = 5;
 
 
     }
