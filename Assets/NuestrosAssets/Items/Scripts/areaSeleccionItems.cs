@@ -34,6 +34,7 @@ public class areaSeleccionItems : MonoBehaviour
 
         if (other.gameObject == Jugador)
         {
+            Debug.Log("Ha Entrado!!!!!!!!!!!!!!!!!!!");
 
             seleccionItemQ.SetActive(true);
             seleccionItemE.SetActive(true);
@@ -47,6 +48,7 @@ public class areaSeleccionItems : MonoBehaviour
 
         if (other.gameObject == Jugador)
         {
+            Debug.Log("!!!!!!!!!!!!!!!!!!!Ha Salido");
 
             seleccionItemQ.SetActive(false);
             seleccionItemE.SetActive(false);
