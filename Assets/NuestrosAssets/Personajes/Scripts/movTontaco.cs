@@ -20,7 +20,8 @@ public class movTontaco : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<NavMeshAgent>().destination = Jugador.transform.position;
+        perseguirJugador();
+        //GetComponent<NavMeshAgent>().destination = Jugador.transform.position;
     }
 
     void OnCollisionStay(Collision obj)
@@ -32,5 +33,8 @@ public class movTontaco : MonoBehaviour
         
     }
 
+    void perseguirJugador(){
+        this.gameObject.GetComponent<NavMeshAgent>().SetDestination(Jugador.position);
+    }
 
 }
