@@ -12,6 +12,10 @@ public class seleccionItemQ : MonoBehaviour
         itemQ.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        itemQ.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {

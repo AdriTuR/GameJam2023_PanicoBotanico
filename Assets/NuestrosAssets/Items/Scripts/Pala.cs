@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using statsPlayer;
+
 
 public class Pala : MonoBehaviour
 {
@@ -10,12 +10,16 @@ public class Pala : MonoBehaviour
     {
 
     }
-   // public statsPlayer statsPlayer;
+   public statsPlayer statsPlayer;
     public int multiplicadorDanyo;
-    
-   
-    
-    // statsPlayer.Danyo = statsPlayer.Danyo * multiplicadorDanyo;
 
-        
+    private void OnEnable()
+    {
+        GameObject jugador = GameObject.Find("Jugador");
+        jugador.GetComponent<statsPlayer>().Danyo = jugador.GetComponent<statsPlayer>().Danyo * multiplicadorDanyo;
+
+    }
+
+
+
 }
