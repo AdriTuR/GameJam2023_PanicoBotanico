@@ -12,11 +12,11 @@ public class Pala : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        multiplicadorDanyo = 1.3f;
     }
     private void Update()
     {
-        if (itemPala.activeSelf == true && hasRun == false)
+        if (Input.GetKeyDown(KeyCode.Return) && hasRun == false)
         {
             hasRun = true;
             GameObject jugador = GameObject.Find("Jugador");

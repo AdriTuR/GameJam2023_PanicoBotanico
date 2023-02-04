@@ -15,7 +15,7 @@ public class Regadera : MonoBehaviour
     private bool hasRun = false;
     private void Update()
     {
-        if (itemRegadera.activeSelf == true && hasRun == false)
+        if (Input.GetKeyDown(KeyCode.Return) == true && hasRun == false)
         {
             hasRun = true;
             GameObject jugador = GameObject.Find("Jugador");
