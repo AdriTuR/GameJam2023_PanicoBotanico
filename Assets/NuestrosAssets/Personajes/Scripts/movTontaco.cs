@@ -5,36 +5,38 @@ using UnityEngine.AI;
 
 public class movTontaco : MonoBehaviour
 {
-    //NavmeshAgent follows Jugador
+    public float followDistance = 10f;
+    public float moveSpeed = 5f;
 
-    public Transform Jugador;
-    public float speed = 5f;
-    public float stoppingDistance = 10f;
-    public float retreatDistance = 5f;
-    
+    private Transform player;
+    private bool following = false;
 
     private void Start()
     {
-        Jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
+        player = GameObject.FindWithTag("Jugador").transform;
     }
 
     private void Update()
     {
-        perseguirJugador();
-        //GetComponent<NavMeshAgent>().destination = Jugador.transform.position;
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (distanceToPlayer <= followDistance)
+        {
+            following = true;
+            transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            following = false;
+        }
     }
 
-    void OnCollisionStay(Collision obj)
+    private void LateUpdate()
     {
-        //al tocar al jugador para de moverse
-        
-
-        
-        
-    }
-
-    void perseguirJugador(){
-        this.gameObject.GetComponent<NavMeshAgent>().SetDestination(Jugador.position);
+        if (!following)
+        {
+            transform.position = transform.position;
+        }
     }
 
 }
