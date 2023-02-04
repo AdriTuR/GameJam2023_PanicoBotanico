@@ -34,13 +34,15 @@ public class seleccionItemQ : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isActiveAndEnabled && hasRun==false)
+        if (isActiveAndEnabled /*&& hasRun==false*/)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 Debug.Log("¡¡¡¡¡Activado objeto Q!!!!!!");
 
                 itemQ.SetActive(true);
+                GameObject itemE = GameObject.Find("seleccionItemE").GetComponent<seleccionItemE>().itemE;
+                itemE.SetActive(false);
                 hasRun = true;
 
             }

@@ -14,7 +14,7 @@ public class Abono : MonoBehaviour
 
     private void Update()
     {
-        if (itemAbono.activeSelf == true && hasRun == false)
+        if (Input.GetKeyDown(KeyCode.Return) == true && hasRun == false)
         {
             hasRun = true;
             GameObject jugador = GameObject.Find("Jugador");
