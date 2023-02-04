@@ -27,6 +27,7 @@ public class movTontaco : MonoBehaviour
     {
         //al tocar al jugador para de moverse
         
+
         
         
     }
