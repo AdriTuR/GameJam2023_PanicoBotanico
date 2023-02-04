@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407310131543335156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.331, z: 0.369}
+  m_LocalPosition: {x: 0, y: 1.267, z: 0.369}
   m_LocalScale: {x: 0.5, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 4614562868689013333}
@@ -91,7 +91,7 @@ BoxCollider:
   m_GameObject: {fileID: 407310131543335156}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: -6617465723572465585}
   - component: {fileID: 3310935547159773030}
   - component: {fileID: 8201961440512587521}
+  - component: {fileID: 8378087358141915961}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Jugador
@@ -125,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5690415182269723577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1965269100683825354}
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
+  MoveSpeed: 8
   RotationSmoothTime: 0.12
 --- !u!114 &3310935547159773030
 MonoBehaviour:
@@ -316,6 +317,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!65 &8378087358141915961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5690415182269723577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.807303, z: 1}
+  m_Center: {x: 0, y: 1.0539274, z: 0}
 --- !u!1 &7551691460997691652
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7551691460997691652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.936, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4614562868689013333}
@@ -407,7 +421,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7551691460997691652}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
