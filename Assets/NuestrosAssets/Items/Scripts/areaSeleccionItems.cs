@@ -14,6 +14,7 @@ public class areaSeleccionItems : MonoBehaviour
 
     void Awake()
     {
+        Jugador = GameObject.Find("Jugador");
         seleccionItemQ = GameObject.Find("seleccionItemQ");
         seleccionItemE = GameObject.Find("seleccionItemE");
      
