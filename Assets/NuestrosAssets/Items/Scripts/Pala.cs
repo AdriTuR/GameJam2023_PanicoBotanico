@@ -17,7 +17,7 @@ public class Pala : MonoBehaviour
     private void OnEnable()
     {
        
-        itemPala.transform.position = GetComponentInParent<GameObject>().transform.position;
+        //itemPala.transform.position = GetComponentInParent<GameObject>().transform.position;
         GameObject jugador = GameObject.Find("Jugador");
         jugador.GetComponent<statsPlayer>().Danyo = jugador.GetComponent<statsPlayer>().Danyo * multiplicadorDanyo;
 
