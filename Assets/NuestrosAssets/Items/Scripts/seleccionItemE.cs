@@ -14,7 +14,7 @@ public class seleccionItemE : MonoBehaviour
     void Start()
     {
         itemQ = GameObject.Find("seleccionItemQ").GetComponent<seleccionItemQ>().itemAparecer;
-        itemAparecer = Random.Range(0, 2);
+        itemAparecer = Random.Range(0, 3);
         while(itemAparecer == itemQ)
         {
             itemAparecer = Random.Range(0, 2);

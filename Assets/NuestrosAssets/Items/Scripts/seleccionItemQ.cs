@@ -14,7 +14,7 @@ public class seleccionItemQ : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        itemAparecer = Random.Range(0, 2);
+        itemAparecer = Random.Range(0, 3);
         itemQ = GameObject.Find(listaItems[itemAparecer]);
 
     }
