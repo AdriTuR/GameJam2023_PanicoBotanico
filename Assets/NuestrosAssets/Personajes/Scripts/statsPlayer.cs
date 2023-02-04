@@ -12,7 +12,7 @@ public class statsPlayer : MonoBehaviour
     [SerializeField]
     private int vidaMax;
     [SerializeField]
-    private int vida;
+    public int vida;
     [SerializeField]
     public float velocidadMovimiento;
     [SerializeField]
