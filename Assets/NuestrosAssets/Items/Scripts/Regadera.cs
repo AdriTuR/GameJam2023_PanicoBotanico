@@ -10,13 +10,27 @@ public class Regadera : MonoBehaviour
         
     }
 
-    public statsPlayer statsPlayer;
-    
+    private GameObject itemRegadera;
 
-    private void OnEnable()
+    private void Update()
     {
-        GameObject jugador = GameObject.Find("Jugador");
-        jugador.GetComponent<statsPlayer>().VidaMax = jugador.GetComponent<statsPlayer>().VidaMax + 1;
+        if (itemRegadera.activeSelf == true)
+        {
+            GameObject jugador = GameObject.Find("Jugador");
+            jugador.GetComponent<statsPlayer>().VidaMax = jugador.GetComponent<statsPlayer>().VidaMax + 1;
 
+            Debug.Log("Vida Máxima Jugador es: " + jugador.GetComponent<statsPlayer>().VidaMax);
+        }
     }
+    private void OnEnable()
+     {
+         itemRegadera = GameObject.Find("itemRegadera");
+         //itemRegadera.transform.position = GetComponentInParent<GameObject>().transform.position;
+         /*
+         GameObject jugador = GameObject.Find("Jugador");
+         jugador.GetComponent<statsPlayer>().VidaMax = jugador.GetComponent<statsPlayer>().VidaMax + 1;
+
+         Debug.Log("Vida Máxima Jugador es: " + jugador.GetComponent<statsPlayer>().VidaMax);*/
+
+     }
 }

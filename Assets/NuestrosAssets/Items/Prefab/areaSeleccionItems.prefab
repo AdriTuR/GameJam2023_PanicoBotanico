@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2618255633822256454}
   - component: {fileID: 5352427522080415798}
   - component: {fileID: 1743828790672634742}
+  - component: {fileID: 2802228967163241126}
   m_Layer: 0
   m_Name: seleccionItemQ
   m_TagString: Untagged
@@ -95,6 +96,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2802228967163241126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574290183529811104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: effbf7d158eb7624b9d63cf86c5b07ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemQ: {fileID: 0}
+  itemQInstanciado: {fileID: 0}
+  listaItems:
+  - itemPala
+  - itemRegadera
+  - itemAbono
+  itemAparecer: 0
 --- !u!1 &3942658787172717751
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +127,7 @@ GameObject:
   - component: {fileID: 5608290046874822196}
   - component: {fileID: 149339111446448580}
   - component: {fileID: 1790864496193870956}
+  - component: {fileID: 3273239276829357969}
   m_Layer: 0
   m_Name: seleccionItemE
   m_TagString: Untagged
@@ -190,6 +211,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3273239276829357969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3942658787172717751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32d948373b922843b530cf6dd75d19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemE: {fileID: 0}
+  listaItems:
+  - itemPala
+  - itemRegadera
+  - itemAbono
+  itemAparecer: 0
 --- !u!1 &4067466485816128715
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08f62d97d088b045a6091f998393dca, type: 2}
+  - {fileID: 2100000, guid: e93de284db28cb9429bcaa4b66e6e10c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
