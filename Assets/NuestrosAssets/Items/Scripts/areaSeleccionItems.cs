@@ -12,13 +12,17 @@ public class areaSeleccionItems : MonoBehaviour
     public GameObject Jugador;
     // Start is called before the first frame update
 
-    void Start()
+    void Awake()
     {
-        seleccionItemQ.SetActive(false);
-        seleccionItemE.SetActive(false);
-
+        seleccionItemQ = GameObject.Find("seleccionItemQ");
+        seleccionItemE = GameObject.Find("seleccionItemE");
+     
     }
 
+    private void Start()
+    {
+       
+    }
     // Update is called once per frame
     void Update()
     {

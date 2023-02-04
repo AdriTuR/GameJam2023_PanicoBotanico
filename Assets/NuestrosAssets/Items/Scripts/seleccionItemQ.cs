@@ -5,11 +5,24 @@ using UnityEngine;
 public class seleccionItemQ : MonoBehaviour
 {
     public GameObject itemQ;
+    public GameObject seleccionItem;
 
+    public string[] listaItems = new string[] { "itemPala", "itemRegadera", "itemAbono"};
+    public int itemAparecer;
+    private int itemE;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        itemQ.SetActive(false);
+        itemAparecer = Random.Range(0, 2);
+        itemQ = GameObject.Find(listaItems[itemAparecer]);
+
+    }
+    void Start()
+    {       
+        seleccionItem = GameObject.Find("seleccionItemQ");
+        itemQ.transform.position = seleccionItem.transform.position;
+        seleccionItem.SetActive(false);
+
     }
 
     private void OnEnable()
@@ -23,6 +36,7 @@ public class seleccionItemQ : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                
                 itemQ.SetActive(true);
             }
         }
