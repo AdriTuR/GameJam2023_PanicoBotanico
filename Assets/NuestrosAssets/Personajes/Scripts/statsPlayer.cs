@@ -40,7 +40,7 @@ public class statsPlayer : MonoBehaviour
     void Start()
     {
         // Inicializar las estadísticas del jugador aquí
-        VidaMax = 6;
+        VidaMax = 5;
         Vida = 6;
 
 

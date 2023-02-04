@@ -10,6 +10,7 @@ public class seleccionItemQ : MonoBehaviour
     public string[] listaItems = new string[] { "itemPala", "itemRegadera", "itemAbono"};
     public int itemAparecer;
     private int itemE;
+    private bool hasRun = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -21,23 +22,27 @@ public class seleccionItemQ : MonoBehaviour
     {       
         seleccionItem = GameObject.Find("seleccionItemQ");
         itemQ.transform.position = seleccionItem.transform.position;
+        itemQ.SetActive(false);
+
         seleccionItem.SetActive(false);
 
     }
 
     private void OnEnable()
     {
-        itemQ.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
-        if (isActiveAndEnabled)
+        if (isActiveAndEnabled && hasRun==false)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                
+                Debug.Log("¡¡¡¡¡Activado objeto Q!!!!!!");
+
                 itemQ.SetActive(true);
+                hasRun = true;
+
             }
         }
     }
