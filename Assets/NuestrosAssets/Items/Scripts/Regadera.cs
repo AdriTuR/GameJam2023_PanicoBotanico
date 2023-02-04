@@ -20,7 +20,7 @@ public class Regadera : MonoBehaviour
             hasRun = true;
             GameObject jugador = GameObject.Find("Jugador");
             jugador.GetComponent<statsPlayer>().VidaMax = jugador.GetComponent<statsPlayer>().VidaMax + 1;
-
+            jugador.GetComponent<statsPlayer>().Vida = jugador.GetComponent<statsPlayer>().Vida + 1;
             Debug.Log("Vida Máxima Jugador es: " + jugador.GetComponent<statsPlayer>().VidaMax);
             itemRegadera.SetActive(false);
         }
