@@ -18,16 +18,34 @@ public class dashPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Space))
         {
             Dash();
+        }
+        else if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Space))
+        {
+            Dash();
+        }
+        else if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Space))
+        {
+            DashZ();
+        }
+        else if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space))
+        {
+            DashZ();
         }
     }
 
     private void Dash()
     {
-        Vector3 dashDirection = transform.forward;
-        rb.AddForce(dashDirection * dashSpeed, ForceMode.Impulse);
+        Vector3 dashDirection = transform.forward * dashSpeed;
+        rb.AddForce(dashDirection, ForceMode.Impulse);
+    }
+    private void DashZ()
+    {
+        Vector3 dashDirection = transform.right * dashSpeed;
+        rb.AddForce(dashDirection, ForceMode.Impulse);
     }
 }
     
