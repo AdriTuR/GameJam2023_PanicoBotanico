@@ -24,9 +24,13 @@ public class Obstaculo : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Jugador") {
-            quitarVida();
+            quitarVida(collision.gameObject);
         }
-       
+        else if (collision.gameObject.tag == "Enemigo")
+        {
+            quitarVida(collision.gameObject);
+        }
+
     }
 
     //----------------------------------------------------------------//
@@ -34,13 +38,20 @@ public class Obstaculo : MonoBehaviour
 
 
 
-    void quitarVida()
+    void quitarVida(GameObject gameObject)
     {
-        GameObject jugador = GameObject.Find("Jugador");
-        if(jugador.GetComponent<statsPlayer>().Vida > 0)
+        if (gameObject.tag == "Jugador")
         {
-            jugador.GetComponent<statsPlayer>().Vida -= danyo;
-            Debug.Log("Te han hecho daño");
+            if (gameObject.GetComponent<statsPlayer>().Vida > 0)
+            {
+                gameObject.GetComponent<statsPlayer>().Vida -= danyo;
+                Debug.Log("Te han hecho daño");
+            }
         }
+        else if (gameObject.tag == "Enemigo")
+        {
+            Debug.Log("Enemigo se ha hecho daño con obstaculo");
+        }
+        
     }
 }
