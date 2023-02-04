@@ -12,7 +12,7 @@ public class Pala : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        multiplicadorDanyo = 1.3f;
     }
     private void Update()
     {

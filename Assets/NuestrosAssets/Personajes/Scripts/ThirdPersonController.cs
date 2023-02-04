@@ -25,6 +25,7 @@ namespace StarterAssets
         private float _targetRotation = 0.0f;
         private float _rotationVelocity;
         private float _verticalVelocity;
+        public float gravity = 9.8f;
 
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -67,6 +68,9 @@ namespace StarterAssets
         private void Update()
         {
             Move();
+            
+            gravedad();
+            
         }
 
 
@@ -110,7 +114,29 @@ namespace StarterAssets
             _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
         }
+        void gravedad()
+        {
+            //vector that points down and pulls the player using grounded from controller
+            Vector3 gravityVector = new Vector3(0.0f, -1.0f, 0.0f);
+            //if the player is grounded, the vertical velocity is 0
+            if (_controller.isGrounded)
+            {
+                _verticalVelocity = 0.0f;
+            }
+            //if the player is not grounded, the vertical velocity is the gravity
+            else
+            {
+                _verticalVelocity -= gravity * Time.deltaTime;
+            }
+            //move the player using the gravity vector
+            _controller.Move(gravityVector * Time.deltaTime);
+            
+            
 
+
+        }
     }
+
+    
 }
 

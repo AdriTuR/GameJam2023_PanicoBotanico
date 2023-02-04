@@ -2940,6 +2940,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6617465723572465585, guid: 9c792b20d2dc8354aba8d1d346a33626, type: 3}
+      propertyPath: gravity
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: -5493684300498563713, guid: 9c792b20d2dc8354aba8d1d346a33626, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -3028,7 +3032,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jugador
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3057220568080978923, guid: 9c792b20d2dc8354aba8d1d346a33626, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c792b20d2dc8354aba8d1d346a33626, type: 3}
 --- !u!4 &9189174448450475172 stripped
 Transform:
