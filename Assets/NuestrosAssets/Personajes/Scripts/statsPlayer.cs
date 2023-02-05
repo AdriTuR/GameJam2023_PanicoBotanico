@@ -28,7 +28,8 @@ public class statsPlayer : MonoBehaviour
     [SerializeField]
     private bool espinas;
     private GameObject jugador;
-    private bool gamePaused = false;
+  
+    private bool gameIsPaused;
     // Getters y setters para las estadísticas del jugador
     public float Danyo { get => danyo; set => danyo = value; }
     public int VidaMax { get => vidaMax; set => vidaMax = value; }
@@ -68,25 +69,23 @@ public class statsPlayer : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && gamePaused == false)
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
+            gameIsPaused = !gameIsPaused;
             PauseGame();
-            gamePaused = true;
-        }
-        if (Input.GetKeyDown(KeyCode.Escape) && gamePaused == true)
-        {
-            ResumeGame();
-            gamePaused = false;
         }
     }
 
     void PauseGame()
     {
-        Time.timeScale = 0;
-    }
-    void ResumeGame()
-    {
-        Time.timeScale = 1;
+        if (gameIsPaused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 
 }
