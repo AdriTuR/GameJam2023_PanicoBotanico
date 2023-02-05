@@ -6,20 +6,25 @@ public class seleccionItemE : MonoBehaviour
 {
     public GameObject seleccionItem;
     public GameObject itemE;
-    public string[] listaItems = new string[] { "itemPala", "itemRegadera", "itemAbono" };
+    public string[] listaItems = new string[] { "itemPala", "itemRegadera", "itemAbono", "itemArmaduraEspinas" };
     public int itemAparecer;
     private int itemQ;
     private bool hasRun = false;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        itemQ = GameObject.Find("seleccionItemQ").GetComponent<seleccionItemQ>().itemAparecer;
-        itemAparecer = Random.Range(0, 3);
-        while(itemAparecer == itemQ)
+        itemAparecer = Random.Range(0, 4);
+        while (itemAparecer == itemQ)
         {
-            itemAparecer = Random.Range(0, 2);
+            itemAparecer = Random.Range(0, 4);
         }
         itemE = GameObject.Find(listaItems[itemAparecer]);
+        itemQ = GameObject.Find("seleccionItemQ").GetComponent<seleccionItemQ>().itemAparecer;
+
+    }
+    void Start()
+    {
+        
        
 
         seleccionItem = GameObject.Find("seleccionItemE");

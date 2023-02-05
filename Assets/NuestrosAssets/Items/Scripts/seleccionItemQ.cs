@@ -7,14 +7,14 @@ public class seleccionItemQ : MonoBehaviour
     public GameObject itemQ;
     public GameObject seleccionItem;
 
-    public string[] listaItems = new string[] { "itemPala", "itemRegadera", "itemAbono"};
+    public string[] listaItems = new string[] { "itemPala", "itemRegadera", "itemAbono", "itemArmaduraEspinas" };
     public int itemAparecer;
     private int itemE;
     private bool hasRun = false;
     // Start is called before the first frame update
     private void Awake()
     {
-        itemAparecer = Random.Range(0, 3);
+        itemAparecer = Random.Range(0, 4);
         itemQ = GameObject.Find(listaItems[itemAparecer]);
 
     }

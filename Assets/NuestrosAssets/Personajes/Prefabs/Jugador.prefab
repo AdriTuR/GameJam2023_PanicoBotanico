@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3310935547159773030}
   - component: {fileID: 8201961440512587521}
   - component: {fileID: 8378087358141915961}
+  - component: {fileID: 8075182816910215478}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Jugador
@@ -73,6 +74,7 @@ MonoBehaviour:
   tamanyoPlayer: 0
   nockbackeo: 0
   dashCooldown: 0
+  espinas: 0
 --- !u!143 &-1037209286031158255
 CharacterController:
   m_ObjectHideFlags: 0
@@ -236,6 +238,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1049657, y: 1.807303, z: 1.2627673}
   m_Center: {x: 0.052482843, y: 1.0539274, z: -0.040930957}
+--- !u!114 &8075182816910215478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5690415182269723577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c5ff34b40aaea4398532f95f11f4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6172939502335230569
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataque: 0
+  anim: {fileID: 0}
 --- !u!1001 &2655749486124140273
 PrefabInstance:
   m_ObjectHideFlags: 0
