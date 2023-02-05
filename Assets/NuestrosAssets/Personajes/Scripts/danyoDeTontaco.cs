@@ -12,6 +12,8 @@ public class danyoDeTontaco : MonoBehaviour
 
     void OnCollisionStay(Collision obj)
     {
+        StartCoroutine(DelayedAction());
+
         //al tocar al jugador hace daño
         if (obj.gameObject.tag == "Jugador")
         {
@@ -23,6 +25,11 @@ public class danyoDeTontaco : MonoBehaviour
         }
     }
 
+    private IEnumerator DelayedAction()
+    {
+        yield return new WaitForSeconds(1);
+        //print("I was printed after a delay of 5 seconds!");
+    }
 
 
 
