@@ -12,6 +12,7 @@ public class espadazo : MonoBehaviour
     public Animator anim;
     public GameObject jugador;
     public float delay = 1.0f;
+    public float delay2 = 2.0f;
     float timer = 0.0f;
     //private GameObject colisionAtaque;
 
@@ -28,12 +29,15 @@ public class espadazo : MonoBehaviour
         timer += Time.deltaTime;
         if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("Ha empezado a atacar");
-            Ataque = true;
-            anim.SetTrigger("atacar");
+            if (timer > delay)
+            {
+                Debug.Log("Ha empezado a atacar");
+                Ataque = true;
+                anim.SetTrigger("atacar");
+            }
         }
         //StartCoroutine(ataqueFalse());
-        if (timer > delay)
+        if (timer > delay2)
         {
             Debug.Log("Ha dejado de atacar!!!!!!!!!!!!");
             Ataque = false;
