@@ -47,12 +47,25 @@ public class espadazo : MonoBehaviour
 
     
 
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("COLISIONA CON: "+collision.tag);
-        //Debug.Log("La espada ha entrado en colision");
-        atacar(collision.gameObject);
-
+        if (collision.gameObject.tag == "Enemigo")
+        {
+            //Debug.Log("La espada ha entrado en colision");
+            atacar(collision.gameObject);
+            if (ataque == true)
+            {
+                Debug.Log("Esta atacando");
+                /* if (gameObject.gameObject.tag == "Enemigo")
+                 {*/
+                Debug.Log("La espada ha entrado en colision con el enemigo");
+                //Debug.Log(collision.gameObject.tag);
+                collision.gameObject.GetComponent<statsEnemigos>().Vida -= jugador.GetComponent<statsPlayer>().Danyo;
+                Debug.Log("Enemigo se ha hecho daño con espada");
+                ataque = false;
+                //}
+            }
+        }
         //ataque = false;
         
     }
@@ -60,18 +73,7 @@ public class espadazo : MonoBehaviour
     private void atacar(GameObject gameObject)
     {
         
-        if (ataque == true)
-        {
-            Debug.Log("Esta atacando");
-            if (gameObject.gameObject.tag == "Enemigo")
-            {
-                Debug.Log("La espada ha entrado en colision con el enemigo");
-                //Debug.Log(collision.gameObject.tag);
-                gameObject.gameObject.GetComponent<statsEnemigos>().Vida -= jugador.GetComponent<statsPlayer>().Danyo;
-                Debug.Log("Enemigo se ha hecho daño con espada");
-                ataque = false;
-            }
-        }
+        
 
        
 
