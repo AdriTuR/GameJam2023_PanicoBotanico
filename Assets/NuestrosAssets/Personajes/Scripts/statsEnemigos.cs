@@ -31,9 +31,11 @@ public class statsEnemigos : MonoBehaviour
     public float DashCooldown { get => dashCooldown; set => dashCooldown = value; }
 
     private GameObject jugador;
+    //private int contador;
     // Start is called before the first frame update
     void Start()
     {
+        //contador = GameObject.Find("GAMEMANAGER").GetComponent<SpawnerEnemigos>().contador;
         jugador = GameObject.Find("Jugador");
     }
 
@@ -54,6 +56,8 @@ public class statsEnemigos : MonoBehaviour
         {
             jugador.GetComponent<statsPlayer>().Vida += 1;
             Destroy(this.gameObject);
+            GameObject.Find("GAMEMANAGER").GetComponent<SpawnerEnemigos>().contador += 1;
+            Debug.Log("Contador Game Manager == " + GameObject.Find("GAMEMANAGER").GetComponent<SpawnerEnemigos>().contador);
         }
     }
 

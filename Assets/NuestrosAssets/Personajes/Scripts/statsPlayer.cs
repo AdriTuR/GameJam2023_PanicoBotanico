@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class statsPlayer : MonoBehaviour
 {
@@ -41,8 +42,9 @@ public class statsPlayer : MonoBehaviour
     public float Nockbackeo { get => nockbackeo; set => nockbackeo = value; }
     public float DashCooldown { get => dashCooldown; set => dashCooldown = value; }
     public bool Espinas { get => espinas; set => espinas = value; }
-
-
+    GameObject pantallaPausa;
+    GameObject pantallaDerrota;
+    
     void Start()
     {
         jugador = GameObject.Find("Jugador");
@@ -51,7 +53,10 @@ public class statsPlayer : MonoBehaviour
         Vida = 6;
         Danyo = 5;
         Espinas = false;
-
+        pantallaPausa = GameObject.Find("PANTALLA PAUSA");
+        pantallaPausa.SetActive(false);
+        pantallaDerrota = GameObject.Find("PANTALLA Has muerto");
+        pantallaDerrota.SetActive(false);
     }
 
     void Update()
@@ -68,10 +73,19 @@ public class statsPlayer : MonoBehaviour
         if (vida == 0)
         {
             Time.timeScale = 0;
+            pantallaDerrota.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                pantallaDerrota.SetActive(false);
+                Time.timeScale = 1;
+
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             gameIsPaused = !gameIsPaused;
+            
             PauseGame();
         }
     }
@@ -81,10 +95,13 @@ public class statsPlayer : MonoBehaviour
         if (gameIsPaused)
         {
             Time.timeScale = 0f;
+            pantallaPausa.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
+            pantallaPausa.SetActive(false);
+
         }
     }
 

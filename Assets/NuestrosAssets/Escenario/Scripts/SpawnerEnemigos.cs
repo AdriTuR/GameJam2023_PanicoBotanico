@@ -8,17 +8,19 @@ public class SpawnerEnemigos : MonoBehaviour
     public Transform[] spawnPoints;
     public int maxEnemies = 10;
     public int maxSimultaneousEnemies = 4;
-
+    GameObject pantallaVictoria;
     private int currentEnemies = 0;
     private bool[] occupiedSpawnPoints;
-
+    public int contador = 0;
     private void Start()
     {
         occupiedSpawnPoints = new bool[spawnPoints.Length];
+        pantallaVictoria = GameObject.Find("PANTALLA Completado");
     }
 
     private void Update()
     {
+        
         if (currentEnemies < maxEnemies)
         {
             int availableSpawnPoints = 0;
@@ -41,6 +43,16 @@ public class SpawnerEnemigos : MonoBehaviour
                 }
             }
         }
+        if (contador >= 18)
+        {
+            pantallaVictoria.SetActive(true);
+        }
+        else
+        {
+
+            pantallaVictoria.SetActive(false);
+        }
+
     }
 
     private void OnEnemyDestroyed()
