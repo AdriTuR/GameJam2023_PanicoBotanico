@@ -26,7 +26,8 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         public float gravity = 9.8f;
-
+        private float delay = 20.0f;
+        float timer = 0.0f;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
@@ -51,6 +52,7 @@ namespace StarterAssets
 
         private void Awake()
         {
+            delay = 20.0f;
             // get a reference to our main camera
             if (_mainCamera == null)
             {
@@ -70,6 +72,8 @@ namespace StarterAssets
             Move();
             
             gravedad();
+
+            
             
         }
 
@@ -80,7 +84,7 @@ namespace StarterAssets
             //float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
             float targetSpeed = MoveSpeed;
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
-
+            
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
@@ -89,6 +93,7 @@ namespace StarterAssets
 
 
             _speed = targetSpeed;
+
 
 
             // normalise input direction
@@ -113,6 +118,18 @@ namespace StarterAssets
             // move the player
             _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                while (timer < 3.0f)
+                {
+                    timer += Time.fixedDeltaTime;
+                    _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime * 1.01f) +
+                      new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+                }
+                targetSpeed = MoveSpeed;
+                timer = 0.0f;
+            }
         }
         void gravedad()
         {
