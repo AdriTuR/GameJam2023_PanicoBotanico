@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7433920626555530890}
   - component: {fileID: 7433920626555530891}
+  - component: {fileID: 1436124765464389960}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
@@ -54,3 +55,15 @@ MonoBehaviour:
   - {fileID: 0}
   maxEnemies: 10
   maxSimultaneousEnemies: 4
+--- !u!114 &1436124765464389960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7433920626555530884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94fbe52504cd42438050e2800d1c3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
