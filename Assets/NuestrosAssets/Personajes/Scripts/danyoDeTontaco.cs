@@ -7,7 +7,7 @@ public class danyoDeTontaco : MonoBehaviour
     //Tontaco does damage to Jugador on collision, Jugador has his health on statsPlayer
 
     public int danyo = 1;
-    public float tiempoEntreDanyo = 4f;
+    public float tiempoEntreDanyo = 8f;
     public float tiempoDanyo = 0f;
     public bool tocadoPrimeraVez = false;
     void OnCollisionStay(Collision obj)

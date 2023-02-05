@@ -30,10 +30,11 @@ public class statsEnemigos : MonoBehaviour
     public float Nockbackeo { get => nockbackeo; set => nockbackeo = value; }
     public float DashCooldown { get => dashCooldown; set => dashCooldown = value; }
 
+    private GameObject jugador;
     // Start is called before the first frame update
     void Start()
     {
-        
+        jugador = GameObject.Find("Jugador");
     }
 
     // Update is called once per frame
@@ -51,7 +52,10 @@ public class statsEnemigos : MonoBehaviour
     {
         if(vida <= 0)
         {
+            jugador.GetComponent<statsPlayer>().Vida += 1;
             Destroy(this.gameObject);
         }
     }
+
+ 
 }
