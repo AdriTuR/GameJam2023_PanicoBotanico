@@ -73,6 +73,7 @@ MonoBehaviour:
   tamanyoPlayer: 0
   nockbackeo: 0
   dashCooldown: 0
+  espinas: 0
 --- !u!143 &1382217717595944291
 CharacterController:
   m_ObjectHideFlags: 0
@@ -246,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 505681085706382514}
   - component: {fileID: 5054888215816510937}
-  - component: {fileID: 7176566139843298605}
+  - component: {fileID: 4601346947382302221}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -281,7 +282,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3020595, y: 0.24277359, z: 1}
   m_Center: {x: -0.0107162595, y: 0.10106024, z: 0}
---- !u!114 &7176566139843298605
+--- !u!114 &4601346947382302221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ataque: 0
   anim: {fileID: 0}
+  jugador: {fileID: 0}
 --- !u!1001 &5075158759843948419
 PrefabInstance:
   m_ObjectHideFlags: 0
