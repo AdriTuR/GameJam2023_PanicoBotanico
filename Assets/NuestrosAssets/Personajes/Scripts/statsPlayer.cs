@@ -47,7 +47,7 @@ public class statsPlayer : MonoBehaviour
     {
         jugador = GameObject.Find("Jugador");
         // Inicializar las estadísticas del jugador aquí
-        VidaMax = 5;
+        VidaMax = 6;
         Vida = 6;
         Danyo = 5;
         Espinas = false;
