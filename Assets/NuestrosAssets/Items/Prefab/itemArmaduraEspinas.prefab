@@ -172,6 +172,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: a8f311c225c53284599cf92f5c60a2f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d0fb12f82ea57f47993d8fa951e0774, type: 2}
     - target: {fileID: 919132149155446097, guid: a8f311c225c53284599cf92f5c60a2f8, type: 3}
       propertyPath: m_Name
       value: mallaespinas
