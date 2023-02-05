@@ -44,7 +44,11 @@ public class statsPlayer : MonoBehaviour
     public bool Espinas { get => espinas; set => espinas = value; }
     GameObject pantallaPausa;
     GameObject pantallaDerrota;
-    
+
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     void Start()
     {
         jugador = GameObject.Find("Jugador");
