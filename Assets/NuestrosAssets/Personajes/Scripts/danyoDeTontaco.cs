@@ -7,16 +7,23 @@ public class danyoDeTontaco : MonoBehaviour
     //Tontaco does damage to Jugador on collision, Jugador has his health on statsPlayer
 
     public int danyo = 1;
-    public float tiempoEntreDanyo = 1f;
+    public float tiempoEntreDanyo = 4f;
     public float tiempoDanyo = 0f;
-
+    public bool tocadoPrimeraVez = false;
     void OnCollisionStay(Collision obj)
     {
-        StartCoroutine(DelayedAction());
-
+        
         //al tocar al jugador hace daño
         if (obj.gameObject.tag == "Jugador")
         {
+            if (tocadoPrimeraVez == false)
+            {
+                StartCoroutine(DelayedAction());
+                Debug.Log("UBEBUBEN PRIMERO!!!!");
+                tocadoPrimeraVez = true;
+            }
+            Debug.Log("UBEBUBEN SEGUNDO!!!!");
+
             if (Time.time > tiempoDanyo)
             {
                 obj.gameObject.GetComponent<statsPlayer>().vida -= danyo;
@@ -24,13 +31,15 @@ public class danyoDeTontaco : MonoBehaviour
             }
         }
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        tocadoPrimeraVez = false;
+    }
 
     private IEnumerator DelayedAction()
     {
-        yield return new WaitForSeconds(1);
-        //print("I was printed after a delay of 5 seconds!");
+        yield return new WaitForSeconds(3);
+        print("I was printed after a delay of 3 seconds!");
     }
-
-
 
 }
