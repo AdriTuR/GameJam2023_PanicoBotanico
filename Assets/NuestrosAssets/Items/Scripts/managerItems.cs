@@ -8,6 +8,7 @@ public class managerItems : MonoBehaviour
     GameObject[] todosItems;
     private void Awake()
     {
+
         todosItems = GameObject.FindGameObjectsWithTag("Items");
 
         /*
